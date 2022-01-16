@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS Projects  (
   DateCreated datetime NOT NULL,
   DateModified datetime NOT NULL,
   FileLocation nvarchar(4000),
-  Grade int UNSIGNED
+  Grade int UNSIGNED DEFAULT 0
 );
 
 CREATE TABLE IF NOT EXISTS Users (
