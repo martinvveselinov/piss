@@ -9,13 +9,13 @@ $channel = $connection->channel();
 $channel->queue_declare('hello', false, false, false, false);
 
 echo " [*] Waiting for messages. To exit press CTRL+C\n";
-
+$message = "";
 $callback = function ($msg) {
     $grade = explode("|", $msg->body);
     echo ' [x] Project ', $grade[0],  '  Received ', $grade[1], "\n";
-    //$_SESSION['message'] = $msg->body;
+    $message = $msg->body;
 };
-echo 'TEST  [x] Project ', $msg, "\n";
+$_SESSION['message'] = $message;
 
 $channel->basic_consume('hello', '', false, true, false, false, $callback);
 

@@ -27,7 +27,6 @@
 <body>
   <!-- php script за свързване с базата и извличане на данните по селектирания проект-->
 <?php
-var_dump($_SESSION);
 require 'db_setup.php';
 if (isset($_SESSION["id"]) == false) {
 	header("Location:login.php");
@@ -142,7 +141,7 @@ if (isset($_SESSION["id"]) == false) {
 		  <h1>" . $project['Title'] . "</h1>
 		  <h3 class='commentHeader'> Project created: <time>" . $project ['DateCreated'] . "</time> </h3>
 		  <h3 class='commentHeader'> Project modified: <time>" . $project['DateModified'] . "</time> </h3>
-		  <h3 class='grade'>Grade: " . $project['Grade'] . "</h3>
+		  <h3 class='grade'>Grade: " . $project['Grade'] != 0 ? $project['Grade'] : "\"Не е оценен\"" . "</h3>
 		  <div class='comment'>
 		  <h3 class='commentHeader'> Project Description</h3> <p class='commentBody'>" . $project['Description'] . "</p>
 		  </div>
