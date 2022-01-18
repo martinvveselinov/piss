@@ -18,8 +18,7 @@ if (isset($_SESSION["admin"]) == true) {
 		$pass
 	  );
 	
-	$sql = "INSERT INTO `comments` (`ProjectId`,`UserId`,`Text`,`Timestamp`) VALUES ('$projId','$usrId','$grade','$date');
-          UPDATE `projects` SET `Grade` ='$grade' WHERE (`Id` = '$projId');"; 
+	$sql = "INSERT INTO `comments` (`ProjectId`,`UserId`,`Text`,`Timestamp`) VALUES ('$projId','$usrId','$grade','$date');"; 
 	$sth = $conn->prepare($sql);
 	$sth->execute();
 
