@@ -18,8 +18,6 @@ $callback = function ($msg) {
     $_SESSION['message'] = $msg->body;
 };
 
-echo 'TEST  [x] Project ', $msg, "\n";
-
 $channel->basic_consume('RabbitQueue', '', false, true, false, false, $callback);
 
 //while ($channel->is_open()) {
