@@ -27,7 +27,6 @@
 <body>
   <!-- php script за свързване с базата и извличане на данните по селектирания проект-->
 <?php
-var_dump($_SESSION);
 require 'db_setup.php';
 if (isset($_SESSION["id"]) == false) {
 	header("Location:login.php");

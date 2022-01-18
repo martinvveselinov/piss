@@ -1,7 +1,6 @@
 <!-- Всеки проект може/трябва да се отваря в нова страница с описание, бутон за сваляне и коментари -->
 <?php   
   session_start();
-  $_SESSION['grades']=array();
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,7 +31,6 @@
   } else if (strlen($_SESSION["mail"]) == 0) {
     header("Location:reg_email.php");
   }
-
   echo "<p class='uname'> Logged in as: " . $_SESSION["name"] . "</p>"  
   ?>
 
@@ -96,14 +94,10 @@
     }
 
     if ($onetime_echo){
-      echo "<h1 class='error'>There are no projects uploaded yet!</h1>";
-
-      if($_SESSION["admin"] == 1) {
-
-		  echo "<h1 class='error'>Click the 'Admin' button to generate users!</h1>";
-
-	  }
-
+      echo "<h1 class='error'>There are no projects uploaded yet!</h1>";
+      if($_SESSION["admin"] == 1) {
+		  echo "<h1 class='error'>Click the 'Admin' button to generate users!</h1>";
+	  }
     }
 
     $conn = null;
